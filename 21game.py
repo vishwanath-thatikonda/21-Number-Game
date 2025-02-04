@@ -17,7 +17,12 @@ def check():
     return True
 
 
-
+def nearestMultiple(num):
+    if num >= 4:
+        near = num + (4 - (num % 4))
+    else:
+        near = 4
+    return near
 
 def game_21():
     # checks whether the numbers are consecutive
@@ -77,7 +82,52 @@ def game_21():
                     else:
                         print ("\nYou did not input consecutive integers.")
                         lose()
-
+        elif chance == "S":
+            comp = 1
+            last = 0
+            while last < 20:
+                #"Computer's turn"
+                j = 1
+                while j <= comp:
+                    xyz.append(last + j)
+                    j = j + 1
+                print ("Order of inputs after computer's turn is:")
+                print (xyz)
+                if xyz[-1] == 20:
+                    lose1()
+                     
+                else:
+                    print ("\nYour turn.")
+                    print ("\nHow many numbers do you wish to enter?")
+                    inp = input('> ')
+                    inp = int(inp)
+                    i = 1
+                    print ("Enter your values")
+                    while i <= inp:
+                        xyz.append(int(input('> ')))
+                        i = i + 1
+                    last = xyz[-1]
+                    if check(xyz) == True:
+                        # print (xyz)
+                        near = nearestMultiple(last)
+                        comp = near - last
+                        if comp == 4:
+                            comp = 3
+                        else:
+                            comp = comp
+                    else:
+                        # if inputs are not consecutive
+                        # automatically disqualified
+                        print ("\nYou did not input consecutive integers.")
+                        # print ("You are disqualified from the game.")
+                        lose()
+            print ("\n\nCONGRATULATIONS !!!")
+            print ("YOU WON !")
+            exit(0)
+             
+        else:
+            print ("wrong choice")
+                         
 
 
     
