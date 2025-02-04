@@ -9,6 +9,7 @@ def lose():
 
 
 def check():
+    xyz =[]
     i = 1
     while i < len(xyz):
         if(xyz[i] - xyz[i-1] != 1):
@@ -25,8 +26,8 @@ def nearestMultiple(num):
     return near
 
 def game_21():
-    # checks whether the numbers are consecutive
     xyz = []
+    # checks whether the numbers are consecutive
     last = 0
     while True:
         print ("Enter 'F' to take the first chance.")
@@ -94,7 +95,7 @@ def game_21():
                 print ("Order of inputs after computer's turn is:")
                 print (xyz)
                 if xyz[-1] == 20:
-                    lose1()
+                    lose()
                      
                 else:
                     print ("\nYour turn.")
