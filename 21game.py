@@ -128,6 +128,24 @@ def game_21():
              
         else:
             print ("wrong choice")
+
+game = True   
+while game == True:
+        print ("Player 2 is Computer.")
+        print("Do you want to play the 21 number game? (Yes / No)")
+        ans = input('> ')
+        if ans =='Yes':
+            game_21()
+        else:
+            print ("Do you want quit the game?(yes / no)")
+            nex = input('> ')
+            if nex == "yes":
+                print ("You are quitting the game...")
+                exit(0)
+            elif nex == "no":
+                print ("Continuing...")
+            else:
+                print ("Wrong choice")
                          
 
 
